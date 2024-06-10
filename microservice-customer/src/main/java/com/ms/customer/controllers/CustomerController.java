@@ -91,4 +91,12 @@ public class CustomerController {
         }
         return ResponseEntity.badRequest().build();
     }
+
+    @GetMapping("/getByCustomer/{id}")
+    public ResponseEntity<?> getByCustomer(@PathVariable Long idCustomer){
+
+        return ResponseEntity.ok(customerService.findPetsByCustomer(idCustomer));
+    }
+
+
 }
